@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Basic_cssSelectors {
 
 	public static void main(String[] args) {
-		WebDriver driver;
+		WebDriver driver;   //Refer "https://saucelabs.com/resources/articles/selenium-tips-css-selectors"
 		String baseurl = "https://www.makemytrip.com/";
 		String userDir = System.getProperty("user.dir");
 		
@@ -42,6 +42,18 @@ public class Basic_cssSelectors {
 		/*6. TagNamep[prop*='value'] */
 		WebElement flightsTab3 = driver.findElement(By.cssSelector("a[id*='flights']"));
 		System.out.println("Flights Tab displayed? "+flightsTab3.isDisplayed());
+		
+		/*7. cssSelectorToSomeEle>ImmediateChild*/
+		WebElement logo3 = driver.findElement(By.cssSelector("p.ch__logo>a"));
+		System.out.println("Logo displayed? "+logo3.isDisplayed());
+		
+		/*8. cssSelectorToSomeEle Child/SubChild */ 
+		WebElement logo4 = driver.findElement(By.cssSelector("p.ch__logo img"));
+		System.out.println("Logo displayed? "+logo4.isDisplayed());
+		
+		/*9. CSS + following-sibling */
+		WebElement fromTextHighlight = driver.findElement(By.cssSelector("#hp-widget__sfrom + span"));
+		System.out.println("From Textbox highlighted? "+fromTextHighlight.isDisplayed());
 		
 		driver.quit();
 		
