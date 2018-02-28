@@ -38,8 +38,6 @@ public class Sync_Example {
 		
 		driver.quit();
 
-
-
 	}
 
 }
